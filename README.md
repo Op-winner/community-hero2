@@ -15,11 +15,13 @@ gamification layer hands out points, ranks, and badges to keep people reporting.
 ```bash
 cd backend
 npm install
-cp .env.example .env       # then paste in your Gemini key
+cp .env.example .env       # then paste in your Gemini key and Supabase settings
 npm start
 ```
 
 Open **http://localhost:3000** — that's it, frontend and API are served from the same place.
+
+> For production or Vercel deployment, set `SUPABASE_URL` and `SUPABASE_KEY` in the environment. The app now persists users, reports, and notifications in Supabase instead of the local `backend/data/store.json` file.
 
 > ⚠️ **Don't open `frontend/index.html` directly as a file.** The page calls `/api/reports`
 > as a relative path, which only resolves correctly when the page is served by the Express
@@ -63,8 +65,7 @@ the offline heuristic for a real deployment; it's there so the rest of the app i
 before you've added a key.
 
 ## Where to extend next
-- `backend/server.js` currently persists to a flat JSON file (`backend/data/store.json`) —
-  swap in SQLite/Postgres before a real deploy.
+- `backend/server.js` now persists to Supabase instead of the local `backend/data/store.json` file, making the app compatible with Vercel and production deployment.
 - Auth is intentionally minimal: username/password with bcrypt hashing, no sessions/JWTs —
   the logged-in `userId` is just trusted from the client on each request. Fine for a
   hackathon demo; add real session tokens before this touches real user data.
