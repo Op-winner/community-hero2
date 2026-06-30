@@ -1,21 +1,15 @@
 {
-  "name": "community-hero-backend",
+  "name": "community-hero",
   "version": "1.0.0",
-  "description": "Backend for Community Hero — civic hazard reporting with AI triage and gamification",
-  "main": "server.js",
-  "type": "commonjs",
+  "private": true,
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
   },
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
+  "dependencies": {    "@supabase/supabase-js": "^2.0.0",    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "geolib": "^3.3.14",
     "multer": "^2.2.0"
-  },
-  "engines": {
-    "node": ">=18.0.0"
   }
 }
