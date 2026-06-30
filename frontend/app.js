@@ -1,6 +1,6 @@
 const API_BASE_URL = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
   ? ""
-  : "https://YOUR_PROJECT_URL.vercel.app";
+  : "https://community-hero-vibecode.vercel.app";
 
 // ---------- auth gate ----------
 const auth = JSON.parse(localStorage.getItem("ch_auth") || "null");
