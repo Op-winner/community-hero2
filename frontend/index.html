@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Community Hero — Civic Dispatch</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wordmark">
+    <span class="wordmark-icon">⛑</span>
+    <div>
+      <h1>COMMUNITY HERO</h1>
+      <p class="tagline">Civic Dispatch — AI-triaged hazard reporting</p>
+    </div>
+  </div>
+  <div class="topbar-stats" id="topbarStats">
+    <div class="stat">
+      <span class="stat-label">RANK</span>
+      <span class="stat-value" id="myRank">Rookie Reporter</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">POINTS</span>
+      <span class="stat-value" id="myPoints">0</span>
+    </div>
+    <div class="stat">
+      <span class="stat-label">HERO</span>
+      <span class="stat-value" id="myName">—</span>
+    </div>
+    <button class="btn-ghost" id="logoutBtn">Log out</button>
+  </div>
+</header>
+
+<main class="layout">
+  <section class="map-panel">
+    <div id="map"></div>
+    <div class="map-hint">Click anywhere on the map to file a hazard report</div>
+  </section>
+
+  <aside class="dispatch-panel">
+
+    <div class="panel-block" id="reportFormBlock" hidden>
+      <h2>NEW REPORT <span class="mono" id="reportCoords"></span></h2>
+      <form id="reportForm">
+        <label>Title
+          <input type="text" id="title" maxlength="80" placeholder="e.g. Large pothole on Main St" required />
+        </label>
+        <label>Description
+          <textarea id="description" maxlength="400" rows="3" placeholder="What's going on? Be specific — it helps the AI triage it correctly." required></textarea>
+        </label>
+        <label>Upload Photo (optional)
+          <input
+            type="file"
+            id="reportImage"
+            accept="image/*">
+
+          <img
+            id="previewImage"
+            style="display:none;width:100%;margin-top:12px;border-radius:12px;">
+        </label>
+        <label>Pick an emoji (optional — AI will suggest one if you skip this)
+          <div class="emoji-picker" id="emojiPicker"></div>
+        </label>
+        <div class="form-actions">
+          <button type="button" class="btn-ghost" id="cancelReport">Cancel</button>
+          <button type="submit" class="btn-primary" id="submitReport">Submit for triage</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="panel-block" id="lastTriageBlock" hidden>
+      <h2>DISPATCH TICKET</h2>
+      <div class="ticket" id="ticketContent"></div>
+    </div>
+    <div class="panel-block">
+
+<h2>SEARCH REPORTS</h2>
+
+    <input
+    id="searchBox"
+    type="text"
+    placeholder="Search reports..."
+    class="search-input">
+
+    <select id="severityFilter">
+
+    <option value="">All Severity</option>
+
+    <option value="critical">Critical</option>
+
+    <option value="high">High</option>
+
+    <option value="medium">Medium</option>
+
+    <option value="low">Low</option>
+
+    </select>
+
+    </div>
+    <div class="panel-block">
+      <div class="panel-block-header">
+        <h2>DISPATCH LOG</h2>
+        <span class="mono" id="reportCount">0 reports</span>
+      </div>
+      <div class="log-list" id="logList">
+        <p class="empty-state">No reports yet. Click the map to file the first one.</p>
+      </div>
+    </div>
+
+    <div class="panel-block">
+      <h2>TOP RESPONDERS</h2>
+      <div class="leaderboard" id="leaderboard">
+        <p class="empty-state">Leaderboard fills in as reports come in.</p>
+      </div>
+    </div>
+
+  </aside>
+</main>
+
+<div id="toast" class="toast">
+<span id="toastText"></span>
+</div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

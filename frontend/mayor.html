@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Community Hero — Mayor's Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wordmark">
+    <span class="wordmark-icon">🏛️</span>
+    <div>
+      <h1>MAYOR'S DASHBOARD</h1>
+      <p class="tagline">Community Hero — Civic Dispatch Overview</p>
+    </div>
+  </div>
+  <div class="topbar-stats">
+    <div class="stat">
+      <span class="stat-label">SIGNED IN AS</span>
+      <span class="stat-value" id="adminName">—</span>
+    </div>
+    <button class="btn-ghost" id="logoutBtn">Log out</button>
+  </div>
+</header>
+
+<main class="dashboard-layout">
+
+  <section class="stat-cards" id="statCards"></section>
+
+  <section class="dashboard-grid">
+    <div class="panel-block dashboard-table-block">
+      <div class="panel-block-header">
+        <h2>LIVE OPERATIONS</h2>
+        <span class="mono" id="analyticsSummary">Loading…</span>
+      </div>
+      <div class="panel-block-body">
+        <div class="panel-block" id="notifications"></div>
+      </div>
+    </div>
+
+    <div class="panel-block">
+      <h2>TOP RESPONDERS</h2>
+      <div class="leaderboard" id="leaderboard">
+        <p class="empty-state">Leaderboard fills in as reports come in.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="dashboard-grid">
+    <div class="panel-block dashboard-table-block">
+      <div class="panel-block-header">
+        <h2>ALL REPORTS</h2>
+        <span class="mono" id="reportTotal">0 reports</span>
+      </div>
+      <div class="table-wrap">
+        <table class="report-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Title</th>
+              <th>Category</th>
+              <th>Severity</th>
+              <th>Department</th>
+              <th>Priority</th>
+              <th>ETA</th>
+              <th>Confirms</th>
+              <th>Reporter</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="reportTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<script src="mayor.js"></script>
+</body>
+</html>

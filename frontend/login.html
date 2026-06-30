@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Community Hero — Sign In</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body class="auth-body">
+
+<div class="auth-card">
+  <div class="wordmark auth-wordmark">
+    <span class="wordmark-icon">⛑</span>
+    <div>
+      <h1>COMMUNITY HERO</h1>
+      <p class="tagline">Civic Dispatch — AI-triaged hazard reporting</p>
+    </div>
+  </div>
+
+  <div class="auth-toggle-row">
+    <button class="auth-toggle active" id="tabPublic" type="button">Public</button>
+    <button class="auth-toggle" id="tabAdmin" type="button">Mayor's Office</button>
+  </div>
+
+  <div class="auth-toggle-row auth-toggle-row--sub">
+    <button class="auth-toggle-sub active" id="tabExisting" type="button">Existing user</button>
+    <button class="auth-toggle-sub" id="tabNew" type="button">New user</button>
+  </div>
+
+  <form id="authForm" class="auth-form">
+    <label>Username
+      <input type="text" id="username" autocomplete="username" required />
+    </label>
+    <label>Password
+      <input type="password" id="password" autocomplete="current-password" required />
+    </label>
+    <label id="adminCodeField" hidden>Admin passcode
+      <input type="password" id="adminCode" autocomplete="off" />
+    </label>
+
+    <p class="auth-error" id="authError" hidden></p>
+
+    <button type="submit" class="btn-primary auth-submit" id="authSubmit">Log in</button>
+  </form>
+
+  <p class="auth-footnote" id="authFootnote">
+    New to Community Hero? Switch to <strong>New user</strong> above to create an account.
+  </p>
+</div>
+
+<script src="login.js"></script>
+</body>
+</html>

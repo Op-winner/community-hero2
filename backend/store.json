@@ -1,0 +1,96 @@
+{
+  "reports": [
+    {
+      "id": "93ae904e-0b8f-4a72-b652-1a4229c06af7",
+      "title": "Streetlight Not Working",
+      "description": "Since morning, the streetlight has not been working.",
+      "originalTitle": "street light not working",
+      "lat": 12.976414885038665,
+      "lng": 77.59634435176851,
+      "category": "Streetlight",
+      "severity": "medium",
+      "department": "Public Works",
+      "aiSummary": "A streetlight has been reported as non-functional since this morning.",
+      "emoji": "💡",
+      "isDuplicateRisk": false,
+      "offlineTriage": false,
+      "status": "open",
+      "timeline": [
+        {
+          "status": "Reported",
+          "time": "2026-06-30T13:42:48.987Z"
+        }
+      ],
+      "upvotes": 1,
+      "upvotedBy": [
+        "aecf1a26-d662-4389-9579-ba282979dacb"
+      ],
+      "pointsAwarded": 12,
+      "reporterId": "aecf1a26-d662-4389-9579-ba282979dacb",
+      "reporterName": "Alax",
+      "createdAt": "2026-06-30T13:42:48.987Z",
+      "image": null
+    },
+    {
+      "id": "2a86d173-9ce1-4c13-bf55-8e6d2bc01973",
+      "title": "Pothole",
+      "description": "Big",
+      "originalTitle": "pothole",
+      "lat": 12.976456704432254,
+      "lng": 77.59643554687501,
+      "category": "Pothole",
+      "severity": "medium",
+      "department": "Public Works",
+      "aiSummary": "A large pothole has been reported in the area.",
+      "emoji": "🕳️",
+      "isDuplicateRisk": true,
+      "offlineTriage": false,
+      "status": "open",
+      "timeline": [
+        {
+          "status": "Reported",
+          "time": "2026-06-30T13:39:31.234Z"
+        }
+      ],
+      "upvotes": 1,
+      "upvotedBy": [
+        "aecf1a26-d662-4389-9579-ba282979dacb"
+      ],
+      "pointsAwarded": 12,
+      "reporterId": "c582c01d-6041-4801-b6ec-cf3b1e887a66",
+      "reporterName": "423323",
+      "createdAt": "2026-06-30T13:39:31.234Z",
+      "image": null
+    }
+  ],
+  "users": {
+    "aecf1a26-d662-4389-9579-ba282979dacb": {
+      "id": "aecf1a26-d662-4389-9579-ba282979dacb",
+      "name": "Alax",
+      "totalPoints": 12,
+      "reportCount": 1,
+      "criticalCount": 0
+    },
+    "c582c01d-6041-4801-b6ec-cf3b1e887a66": {
+      "id": "c582c01d-6041-4801-b6ec-cf3b1e887a66",
+      "name": "423323",
+      "totalPoints": 12,
+      "reportCount": 1,
+      "criticalCount": 0
+    }
+  },
+  "accounts": {
+    "423323": {
+      "username": "423323",
+      "passwordHash": "$2a$10$H1W6pN9fxBn0z8HEksEUU.HNHvknfy9vP/XnibLlvpq8iZvSPDnI6",
+      "role": "public",
+      "userId": "c582c01d-6041-4801-b6ec-cf3b1e887a66"
+    },
+    "alax": {
+      "username": "Alax",
+      "passwordHash": "$2a$10$jyKrZqpLeDZ1CSHnlxjZneAWng9dmLOfmW6utk6ueer4mrZWDu5MG",
+      "role": "public",
+      "userId": "aecf1a26-d662-4389-9579-ba282979dacb"
+    }
+  }
+}
